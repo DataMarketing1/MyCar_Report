@@ -41,14 +41,14 @@
             K Car My Car Performance Dashboard
           </span>
           <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-800 text-slate-300">
-            최근 11주간 주차별 흐름 분석 (06/08 ~ 08/23)
+            최근 11주간 주차별 흐름 분석 (06-08 ~ 08-23)
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-black tracking-tight">
           🚗 My Car <span class="text-sky-400">주차별 등록 흐름 & 내차팔기 성과</span>
         </h1>
         <p class="text-slate-400 text-xs md:text-sm mt-1">
-          출처: My Car Daily Report | 실적 검증 동기화 완료
+          출처: My Car Daily Report | 자동 동기화 완료
         </p>
       </div>
 
@@ -78,7 +78,6 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- KPI 1: 11주 총 등록대수 -->
         <div class="kpi-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-blue-600">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-slate-500">① 11주 총 등록대수</span>
@@ -88,11 +87,10 @@
           </div>
           <div class="mt-3">
             <div class="text-3xl font-extrabold text-blue-600">28,837<span class="text-sm font-normal text-slate-500 ml-1">대</span></div>
-            <p class="text-xs text-slate-500 mt-1">최신 11주차(08/17~23): 2,102대</p>
+            <p class="text-xs text-slate-500 mt-1">최신 11주차: 2,102대</p>
           </div>
         </div>
 
-        <!-- KPI 2: 고객 직접등록 -->
         <div class="kpi-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-emerald-500">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-700">② 고객 직접등록 대수</span>
@@ -106,7 +104,6 @@
           </div>
         </div>
 
-        <!-- KPI 3: 자동등록 (앱) -->
         <div class="kpi-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-purple-500">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-purple-700">③ 자동등록 대수 (앱)</span>
@@ -120,7 +117,6 @@
           </div>
         </div>
 
-        <!-- KPI 4: 간편등록 (지점) -->
         <div class="kpi-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-amber-500">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-amber-700">④ 간편등록 대수 (지점)</span>
@@ -137,7 +133,7 @@
       </div>
     </section>
 
-    <!-- [2] 11개 주차별 인터랙티브 흐름 차트 (Chart.js 기반) -->
+    <!-- [2] 11개 주차별 인터랙티브 흐름 차트 -->
     <section class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
         <div>
@@ -147,7 +143,6 @@
           <p class="text-xs text-slate-500 mt-0.5">상단 탭을 눌러 총등록, 채널별, 구매/비구매, 내차팔기(전체 vs 마이카) 흐름을 확인하세요</p>
         </div>
 
-        <!-- Chart Toggle Tabs -->
         <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-xs font-semibold" id="chartTabs">
           <button onclick="switchChartTab('total')" class="px-3 py-1.5 rounded-lg active-tab" id="tab-total">총 등록 흐름</button>
           <button onclick="switchChartTab('channel')" class="px-3 py-1.5 rounded-lg text-slate-600 hover:bg-white" id="tab-channel">채널별(직접/자동/간편)</button>
@@ -156,19 +151,17 @@
         </div>
       </div>
 
-      <!-- Chart.js Canvas Container -->
       <div class="w-full relative h-72 md:h-80">
         <canvas id="mainChartCanvas"></canvas>
       </div>
 
-      <!-- Chart Description Note -->
       <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-2" id="chartNote">
         <span class="font-medium text-slate-600">💡 차트의 막대를 클릭하면 하단 상세 실적표가 해당 주차로 즉시 변경됩니다.</span>
         <span class="text-blue-600 font-semibold">11개 주차 데이터 연동 완료</span>
       </div>
     </section>
 
-    <!-- [3] 내차팔기 성과 4개 핵심 지표 (4개 카드 분리) -->
+    <!-- [3] 내차팔기 성과 4개 핵심 지표 -->
     <section>
       <div class="flex items-center justify-between mb-3">
         <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
@@ -179,7 +172,6 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- 1. 접수건수 (전체) -->
         <div class="kpi-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-slate-600">
           <div class="text-xs font-bold text-slate-600">① 접수건수 (전체)</div>
           <div class="mt-3">
@@ -188,7 +180,6 @@
           </div>
         </div>
 
-        <!-- 2. 매입대수 (전체) -->
         <div class="kpi-card bg-white border border-slate-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-slate-700">
           <div class="text-xs font-bold text-slate-600">② 매입대수 (전체)</div>
           <div class="mt-3">
@@ -197,7 +188,6 @@
           </div>
         </div>
 
-        <!-- 3. 접수건수 (마이카) -->
         <div class="kpi-card bg-white border border-blue-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-blue-600 bg-blue-50/20">
           <div class="text-xs font-bold text-blue-700">③ 접수건수 (마이카)</div>
           <div class="mt-3">
@@ -206,7 +196,6 @@
           </div>
         </div>
 
-        <!-- 4. 매입대수 (마이카) -->
         <div class="kpi-card bg-white border border-emerald-200 rounded-2xl p-5 shadow-sm border-l-4 border-l-emerald-600 bg-emerald-50/20">
           <div class="text-xs font-bold text-emerald-700">④ 매입대수 (마이카)</div>
           <div class="mt-3">
@@ -218,7 +207,7 @@
       </div>
     </section>
 
-    <!-- [4] 주차별 일간 상세 실적표 (내차팔기 헤더 아래 4개 세부 항목 구성) -->
+    <!-- [4] 주차별 일간 상세 실적표 -->
     <section class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4">
         <div>
@@ -226,7 +215,6 @@
           <p class="text-xs text-slate-500">등록 채널 세부(직접/간편/자동/C2C) 및 내차팔기 4개 항목(접수/매입) 매트릭스</p>
         </div>
 
-        <!-- Week Select Dropdown -->
         <div class="flex items-center gap-2">
           <label class="text-xs font-bold text-slate-700">주차 선택:</label>
           <select id="weekSelect" onchange="changeWeekTable(this.value)" class="text-xs font-bold bg-slate-100 border border-slate-300 rounded-xl px-3.5 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm cursor-pointer">
@@ -245,9 +233,7 @@
         </div>
       </div>
 
-      <!-- Dynamic Weekly Table Container -->
       <div id="weeklyTableContainer" class="overflow-x-auto rounded-xl border border-slate-200">
-        <!-- Injected via JS -->
       </div>
     </section>
 
@@ -264,14 +250,12 @@
       <div class="overflow-x-auto rounded-xl border border-slate-200">
         <table class="w-full text-xs text-right border-collapse">
           <thead>
-            <!-- Level 1 Header -->
             <tr class="bg-slate-900 text-white font-semibold text-[11px] border-b border-slate-800">
               <th class="py-2 px-3 text-center" rowspan="2">주차 (기간)</th>
               <th class="py-2 px-2 text-center" rowspan="2">총 등록</th>
               <th class="py-1 px-2 text-center bg-slate-800 text-blue-300" colspan="4">등록 세부 채널</th>
               <th class="py-1 px-2 text-center bg-blue-950 text-amber-300 border-l border-slate-700" colspan="4">내차팔기 실적 (4개 칼럼)</th>
             </tr>
-            <!-- Level 2 Sub-Headers -->
             <tr class="bg-slate-800 text-white font-medium text-[10px]">
               <th class="py-1.5 px-2 text-blue-300">구매 고객</th>
               <th class="py-1.5 px-2 text-emerald-300">비구매 고객</th>
@@ -465,7 +449,6 @@
     const weeksData = [{"start_date": "2026-06-08", "end_date": "2026-06-14", "label": "06-08~06-14", "dates": ["2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-13", "2026-06-14"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [316, 433, 363, 367, 301, 343, 361], "total": 2484, "avg": 414}, "buy": {"daily": [159, 301, 229, 250, 134, 80, 72], "total": 1225, "avg": 204.16666666666666}, "buy_direct": {"daily": [40, 48, 46, 40, 49, 70, 72], "total": 365, "avg": 60.833333333333336}, "buy_quick": {"daily": [17, 60, 43, 57, 27, 2, 0], "total": 206, "avg": 34.333333333333336}, "buy_auto": {"daily": [102, 193, 140, 153, 58, 8, 0], "total": 654, "avg": 109}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [157, 132, 134, 117, 167, 263, 289], "total": 1259, "avg": 209.83333333333334}, "non_buy_direct": {"daily": [157, 132, 133, 116, 165, 263, 289], "total": 1255, "avg": 209.16666666666666}, "non_buy_c2c": {"daily": ["         -", 0, 1, 1, 2, 0, 0], "total": 4, "avg": 0.6666666666666666}, "buy_pct": {"daily": [0.5031645569620253, 0.6951501154734411, 0.6308539944903582, 0.6811989100817438, 0.44518272425249167, 0.23323615160349853, 0.1994459833795014], "total": 0.49315619967793883, "avg": 0.4931561996779388}, "non_buy_pct": {"daily": [0.49683544303797467, 0.30484988452655887, 0.3691460055096419, 0.3188010899182561, 0.5548172757475083, 0.7667638483965015, 0.8005540166204986], "total": 0.5068438003220612, "avg": 0.5068438003220612}, "sell_req_total": {"daily": [418, 476, 422, 410, 355, 270, 277], "total": 2628, "avg": 525.6}, "sell_buy_total": {"daily": [4, 143, 128, 60, 61, 1, 0], "total": 397, "avg": 79.4}, "sell_req_mycar": {"daily": [7, 13, 10, 10, 21, 37, 18], "total": 116, "avg": 23.2}, "sell_buy_mycar": {"daily": [1, 3, 3, 1, 2, 0, 0], "total": 10, "avg": 2}}, {"start_date": "2026-06-15", "end_date": "2026-06-21", "label": "06-15~06-21", "dates": ["2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-20", "2026-06-21"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [419, 439, 465, 782, 393, 271, 299], "total": 3068, "avg": 511.3333333333333}, "buy": {"daily": [153, 148, 217, 567, 252, 94, 73], "total": 1504, "avg": 250.66666666666666}, "buy_direct": {"daily": [84, 83, 160, 79, 50, 43, 70], "total": 569, "avg": 94.83333333333333}, "buy_quick": {"daily": [16, 21, 9, 102, 51, 4, 2], "total": 205, "avg": 34.166666666666664}, "buy_auto": {"daily": [53, 44, 48, 386, 151, 47, 1], "total": 730, "avg": 121.66666666666667}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [266, 291, 248, 215, 141, 177, 226], "total": 1564, "avg": 260.6666666666667}, "non_buy_direct": {"daily": [265, 289, 245, 214, 141, 177, 226], "total": 1557, "avg": 259.5}, "non_buy_c2c": {"daily": [1, 2, 3, 1, 0, 0, 0], "total": 7, "avg": 1.1666666666666667}, "buy_pct": {"daily": [0.36515513126491644, 0.33712984054669703, 0.4666666666666667, 0.7250639386189258, 0.6412213740458015, 0.34686346863468637, 0.24414715719063546], "total": 0.49022164276401564, "avg": 0.49022164276401564}, "non_buy_pct": {"daily": [0.6348448687350835, 0.662870159453303, 0.5333333333333333, 0.2749360613810742, 0.35877862595419846, 0.6531365313653137, 0.7558528428093646], "total": 0.5097783572359843, "avg": 0.5097783572359844}, "sell_req_total": {"daily": [476, 438, 463, 426, 352, 279, 262], "total": 2696, "avg": 539.2}, "sell_buy_total": {"daily": [7, 1, 0, 147, 131, 1, 0], "total": 287, "avg": 57.4}, "sell_req_mycar": {"daily": [34, 33, 38, 16, 19, 4, 10], "total": 154, "avg": 30.8}, "sell_buy_mycar": {"daily": [0, 0, 0, 8, 12, 0, 0], "total": 20, "avg": 4}}, {"start_date": "2026-06-22", "end_date": "2026-06-28", "label": "06-22~06-28", "dates": ["2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-27", "2026-06-28"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [592, 481, 321, 397, 449, 395, 329], "total": 2964, "avg": 494}, "buy": {"daily": [321, 226, 210, 233, 244, 144, 76], "total": 1454, "avg": 242.33333333333334}, "buy_direct": {"daily": [83, 78, 57, 57, 62, 59, 75], "total": 471, "avg": 78.5}, "buy_quick": {"daily": [81, 42, 35, 51, 52, 30, 0], "total": 291, "avg": 48.5}, "buy_auto": {"daily": [157, 106, 118, 125, 130, 55, 1], "total": 692, "avg": 115.33333333333333}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [271, 255, 111, 164, 205, 251, 253], "total": 1510, "avg": 251.66666666666666}, "non_buy_direct": {"daily": [271, 254, 111, 163, 203, 251, 253], "total": 1506, "avg": 251}, "non_buy_c2c": {"daily": [0, 1, 0, 1, 2, 0, 0], "total": 4, "avg": 0.6666666666666666}, "buy_pct": {"daily": [0.5422297297297297, 0.4698544698544699, 0.6542056074766355, 0.5869017632241813, 0.5434298440979956, 0.36455696202531646, 0.23100303951367782], "total": 0.49055330634278005, "avg": 0.49055330634278005}, "non_buy_pct": {"daily": [0.4577702702702703, 0.5301455301455301, 0.34579439252336447, 0.41309823677581864, 0.45657015590200445, 0.6354430379746835, 0.7689969604863222], "total": 0.50944669365722, "avg": 0.50944669365722}, "sell_req_total": {"daily": [501, 446, 393, 413, 393, 250, 281], "total": 2677, "avg": 535.4}, "sell_buy_total": {"daily": [79, 103, 111, 102, 98, 2, 0], "total": 495, "avg": 99}, "sell_req_mycar": {"daily": [36, 33, 15, 28, 22, 14, 26], "total": 174, "avg": 34.8}, "sell_buy_mycar": {"daily": [5, 5, 7, 4, 4, 0, 0], "total": 25, "avg": 5}}, {"start_date": "2026-06-29", "end_date": "2026-07-05", "label": "06-29~07-05", "dates": ["2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-04", "2026-07-05"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [518, 454, 364, 440, 435, 403, 329], "total": 2943, "avg": 490.5}, "buy": {"daily": [330, 310, 167, 213, 214, 137, 76], "total": 1447, "avg": 241.16666666666666}, "buy_direct": {"daily": [69, 60, 51, 69, 47, 60, 76], "total": 432, "avg": 72}, "buy_quick": {"daily": [91, 88, 29, 32, 44, 6, 0], "total": 290, "avg": 48.333333333333336}, "buy_auto": {"daily": [170, 162, 87, 112, 123, 71, 0], "total": 725, "avg": 120.83333333333333}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [188, 144, 197, 227, 221, 266, 253], "total": 1496, "avg": 249.33333333333334}, "non_buy_direct": {"daily": [187, 142, 197, 224, 221, 263, 252], "total": 1486, "avg": 247.66666666666666}, "non_buy_c2c": {"daily": [1, 2, 0, 3, 0, 3, 1], "total": 10, "avg": 1.6666666666666667}, "buy_pct": {"daily": [0.637065637065637, 0.6828193832599119, 0.45879120879120877, 0.48409090909090907, 0.49195402298850577, 0.3399503722084367, 0.23100303951367782], "total": 0.49167516139993206, "avg": 0.491675161399932}, "non_buy_pct": {"daily": [0.36293436293436293, 0.31718061674008813, 0.5412087912087912, 0.5159090909090909, 0.5080459770114942, 0.6600496277915633, 0.7689969604863222], "total": 0.5083248386000679, "avg": 0.5083248386000679}, "sell_req_total": {"daily": [450, 413, 435, 438, 358, 285, 237], "total": 2616, "avg": 523.2}, "sell_buy_total": {"daily": [105, 78, 123, 104, 99, 0, 0], "total": 509, "avg": 101.8}, "sell_req_mycar": {"daily": [20, 26, 25, 27, 20, 24, 23], "total": 165, "avg": 33}, "sell_buy_mycar": {"daily": [6, 5, 6, 6, 5, 0, 0], "total": 28, "avg": 5.6}}, {"start_date": "2026-07-06", "end_date": "2026-07-12", "label": "07-06~07-12", "dates": ["2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-11", "2026-07-12"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [531, 487, 404, 406, 360, 284, 382], "total": 2854, "avg": 475.6666666666667}, "buy": {"daily": [284, 241, 191, 195, 188, 114, 96], "total": 1309, "avg": 218.16666666666666}, "buy_direct": {"daily": [66, 85, 61, 52, 59, 42, 96], "total": 461, "avg": 76.83333333333333}, "buy_quick": {"daily": [100, 61, 38, 41, 40, 9, 0], "total": 289, "avg": 48.166666666666664}, "buy_auto": {"daily": [118, 95, 92, 102, 89, 63, 0], "total": 559, "avg": 93.16666666666667}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [247, 246, 213, 211, 172, 170, 286], "total": 1545, "avg": 257.5}, "non_buy_direct": {"daily": [2, 2, 1, 4, 1, 1, 1], "total": 12, "avg": 2}, "non_buy_c2c": {"daily": [245, 244, 212, 207, 171, 169, 285], "total": 1533, "avg": 255.5}, "buy_pct": {"daily": [0.5348399246704332, 0.4948665297741273, 0.47277227722772275, 0.4802955665024631, 0.5222222222222223, 0.4014084507042254, 0.2513089005235602], "total": 0.45865451997196915, "avg": 0.45865451997196915}, "non_buy_pct": {"daily": [0.4651600753295669, 0.5051334702258727, 0.5272277227722773, 0.5197044334975369, 0.4777777777777778, 0.5985915492957746, 0.7486910994764397], "total": 0.5413454800280308, "avg": 0.5413454800280308}, "sell_req_total": {"daily": [457, 425, 409, 382, 394, 254, 271], "total": 2592, "avg": 518.4}, "sell_buy_total": {"daily": [106, 96, 89, 98, 101, 1, 0], "total": 491, "avg": 98.2}, "sell_req_mycar": {"daily": [37, 27, 28, 26, 15, 21, 21], "total": 175, "avg": 35}, "sell_buy_mycar": {"daily": [6, 4, 5, 4, 13, 0, 0], "total": 32, "avg": 6.4}}, {"start_date": "2026-07-13", "end_date": "2026-07-19", "label": "07-13~07-19", "dates": ["2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-18", "2026-07-19"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [423, 351, 351, 387, 200, 301, 256], "total": 2269, "avg": 378.1666666666667}, "buy": {"daily": [249, 210, 212, 257, 44, 154, 64], "total": 1190, "avg": 198.33333333333334}, "buy_direct": {"daily": [72, 57, 48, 72, 41, 42, 63], "total": 395, "avg": 65.83333333333333}, "buy_quick": {"daily": [73, 34, 55, 51, 3, 10, 1], "total": 227, "avg": 37.833333333333336}, "buy_auto": {"daily": [104, 119, 109, 134, 0, 102, 0], "total": 568, "avg": 94.66666666666667}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [174, 141, 139, 130, 156, 147, 192], "total": 1079, "avg": 179.83333333333334}, "non_buy_direct": {"daily": [174, 139, 135, 129, 155, 145, 192], "total": 1069, "avg": 178.16666666666666}, "non_buy_c2c": {"daily": [0, 2, 4, 1, 1, 2, 0], "total": 10, "avg": 1.6666666666666667}, "buy_pct": {"daily": [0.5886524822695035, 0.5982905982905983, 0.603988603988604, 0.6640826873385013, 0.22, 0.5116279069767442, 0.25], "total": 0.5244601145879242, "avg": 0.5244601145879242}, "non_buy_pct": {"daily": [0.41134751773049644, 0.4017094017094017, 0.396011396011396, 0.3359173126614987, 0.78, 0.4883720930232558, 0.75], "total": 0.4755398854120758, "avg": 0.4755398854120758}, "sell_req_total": {"daily": [448, 399, 408, 354, 247, 227, 271], "total": 2354, "avg": 588.5}, "sell_buy_total": {"daily": [124, 102, 90, 103, 0, 5, 0], "total": 424, "avg": 106}, "sell_req_mycar": {"daily": [22, 13, 22, 12, 13, 11, 15], "total": 108, "avg": 27}, "sell_buy_mycar": {"daily": [6, 2, 0, 4, 0, 0, 0], "total": 12, "avg": 3}}, {"start_date": "2026-07-20", "end_date": "2026-07-26", "label": "07-20~07-26", "dates": ["2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-25", "2026-07-26"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [541, 376, 418, 386, 384, 294, 287], "total": 2686, "avg": 447.6666666666667}, "buy": {"daily": [372, 211, 268, 235, 232, 123, 62], "total": 1503, "avg": 250.5}, "buy_direct": {"daily": [54, 53, 62, 52, 64, 61, 61], "total": 407, "avg": 67.83333333333333}, "buy_quick": {"daily": [122, 38, 51, 52, 44, 9, 1], "total": 317, "avg": 52.833333333333336}, "buy_auto": {"daily": [196, 120, 155, 131, 124, 53, 0], "total": 779, "avg": 129.83333333333334}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [169, 165, 150, 151, 152, 171, 225], "total": 1183, "avg": 197.16666666666666}, "non_buy_direct": {"daily": [166, 164, 147, 148, 148, 167, 224], "total": 1164, "avg": 194}, "non_buy_c2c": {"daily": [3, 1, 3, 3, 4, 4, 1], "total": 19, "avg": 3.1666666666666665}, "buy_pct": {"daily": [0.6876155268022182, 0.5611702127659575, 0.6411483253588517, 0.6088082901554405, 0.6041666666666666, 0.41836734693877553, 0.21602787456445993], "total": 0.5595681310498883, "avg": 0.5595681310498883}, "non_buy_pct": {"daily": [0.3123844731977819, 0.43882978723404253, 0.3588516746411483, 0.3911917098445596, 0.3958333333333333, 0.5816326530612245, 0.7839721254355401], "total": 0.4404318689501117, "avg": 0.44043186895011166}, "sell_req_total": {"daily": [450, 437, 375, 382, 357, 274, 261], "total": 2536, "avg": 507.2}, "sell_buy_total": {"daily": [110, 108, 90, 90, 90, 4, 0], "total": 492, "avg": 98.4}, "sell_req_mycar": {"daily": [30, 24, 8, 15, 15, 6, 10], "total": 108, "avg": 21.6}, "sell_buy_mycar": {"daily": [2, 0, 1, 4, 2, 0, 0], "total": 9, "avg": 1.8}}, {"start_date": "2026-07-27", "end_date": "2026-08-02", "label": "07-27~08-02", "dates": ["2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-01", "2026-08-02"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [500, 490, 406, 432, 465, 236, 178], "total": 2707, "avg": 451.1666666666667}, "buy": {"daily": [363, 325, 267, 276, 343, 121, 49], "total": 1744, "avg": 290.6666666666667}, "buy_direct": {"daily": [56, 149, 67, 51, 61, 41, 49], "total": 474, "avg": 79}, "buy_quick": {"daily": [110, 63, 66, 63, 107, 19, 0], "total": 428, "avg": 71.33333333333333}, "buy_auto": {"daily": [197, 113, 134, 162, 175, 61, 0], "total": 842, "avg": 140.33333333333334}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [137, 165, 139, 156, 122, 115, 129], "total": 963, "avg": 160.5}, "non_buy_direct": {"daily": [135, 163, 130, 143, 112, 110, 129], "total": 922, "avg": 153.66666666666666}, "non_buy_c2c": {"daily": [2, 2, 9, 13, 10, 5, 0], "total": 41, "avg": 6.833333333333333}, "buy_pct": {"daily": [0.726, 0.6632653061224489, 0.6576354679802956, 0.6388888888888888, 0.7376344086021506, 0.5127118644067796, 0.2752808988764045], "total": 0.6442556335426671, "avg": 0.6442556335426671}, "non_buy_pct": {"daily": [0.274, 0.336734693877551, 0.34236453201970446, 0.3611111111111111, 0.2623655913978495, 0.4872881355932203, 0.7247191011235955], "total": 0.3557443664573328, "avg": 0.3557443664573328}, "sell_req_total": {"daily": [422, 411, 367, 403, 332, 240, 274], "total": 2449, "avg": 489.8}, "sell_buy_total": {"daily": [90, 77, 84, 85, 81, 1, 0], "total": 418, "avg": 83.6}, "sell_req_mycar": {"daily": [12, 21, 15, 6, 7, 4, 6], "total": 71, "avg": 14.2}, "sell_buy_mycar": {"daily": [2, 4, 1, 4, 1, 0, 0], "total": 12, "avg": 2.4}}, {"start_date": "2026-08-03", "end_date": "2026-08-09", "label": "08-03~08-09", "dates": ["2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-08", "2026-08-09"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [393, 398, 329, 420, 391, 248, 369], "total": 2548, "avg": 424.6666666666667}, "buy": {"daily": [251, 269, 216, 296, 260, 104, 102], "total": 1498, "avg": 249.66666666666666}, "buy_direct": {"daily": [36, 59, 54, 54, 37, 44, 98], "total": 382, "avg": 63.666666666666664}, "buy_quick": {"daily": [80, 42, 52, 66, 63, 12, 4], "total": 319, "avg": 53.166666666666664}, "buy_auto": {"daily": [135, 168, 110, 176, 160, 48, 0], "total": 797, "avg": 132.83333333333334}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [142, 129, 113, 124, 131, 144, 267], "total": 1050, "avg": 175}, "non_buy_direct": {"daily": [132, 124, 107, 120, 127, 139, 262], "total": 1011, "avg": 168.5}, "non_buy_c2c": {"daily": [10, 5, 6, 4, 4, 5, 5], "total": 39, "avg": 6.5}, "buy_pct": {"daily": [0.638676844783715, 0.6758793969849246, 0.6565349544072948, 0.7047619047619048, 0.6649616368286445, 0.41935483870967744, 0.2764227642276423], "total": 0.5879120879120879, "avg": 0.5879120879120878}, "non_buy_pct": {"daily": [0.361323155216285, 0.3241206030150754, 0.3434650455927052, 0.29523809523809524, 0.3350383631713555, 0.5806451612903226, 0.7235772357723578], "total": 0.41208791208791207, "avg": 0.41208791208791207}, "sell_req_total": {"daily": [456, 403, 402, 361, 370, 249, 250], "total": 2491, "avg": 498.2}, "sell_buy_total": {"daily": [133, 106, 97, 81, 86, 0, 0], "total": 503, "avg": 100.6}, "sell_req_mycar": {"daily": [11, 6, 4, 7, 6, 8, 7], "total": 49, "avg": 9.8}, "sell_buy_mycar": {"daily": [4, 3, 2, 0, 1, 0, 0], "total": 10, "avg": 2}}, {"start_date": "2026-08-10", "end_date": "2026-08-16", "label": "08-10~08-16", "dates": ["2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-15", "2026-08-16"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [383, 398, 412, 387, 311, 167, 154], "total": 2212, "avg": 368.6666666666667}, "buy": {"daily": [277, 267, 304, 273, 226, 49, 43], "total": 1439, "avg": 239.83333333333334}, "buy_direct": {"daily": [43, 57, 51, 54, 36, 42, 43], "total": 326, "avg": 54.333333333333336}, "buy_quick": {"daily": [106, 59, 86, 72, 61, 6, 0], "total": 390, "avg": 65}, "buy_auto": {"daily": [128, 151, 167, 147, 129, 1, 0], "total": 723, "avg": 120.5}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [106, 131, 108, 114, 85, 118, 111], "total": 773, "avg": 128.83333333333334}, "non_buy_direct": {"daily": [102, 128, 101, 108, 80, 114, 109], "total": 742, "avg": 123.66666666666667}, "non_buy_c2c": {"daily": [4, 3, 7, 6, 5, 4, 2], "total": 31, "avg": 5.166666666666667}, "buy_pct": {"daily": [0.7232375979112271, 0.6708542713567839, 0.7378640776699029, 0.7054263565891473, 0.7266881028938906, 0.2934131736526946, 0.2792207792207792], "total": 0.6505424954792043, "avg": 0.6505424954792043}, "non_buy_pct": {"daily": [0.27676240208877284, 0.32914572864321606, 0.2621359223300971, 0.29457364341085274, 0.2733118971061093, 0.7065868263473054, 0.7207792207792207], "total": 0.34945750452079566, "avg": 0.34945750452079566}, "sell_req_total": {"daily": [450, 426, 397, 379, 324, 245, 249], "total": 2470, "avg": 494}, "sell_buy_total": {"daily": [104, 101, 95, 99, 95, 0, 0], "total": 494, "avg": 98.8}, "sell_req_mycar": {"daily": [6, 10, 5, 7, 4, 9, 7], "total": 48, "avg": 9.6}, "sell_buy_mycar": {"daily": [3, 3, 1, 5, 1, 0, 0], "total": 13, "avg": 2.6}}, {"start_date": "2026-08-17", "end_date": "2026-08-23", "label": "08-17~08-23", "dates": ["2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-22", "2026-08-23"], "days": ["월", "화", "수", "목", "금", "토", "일"], "total_reg": {"daily": [103, 348, 411, 424, 393, 230, 193], "total": 2102, "avg": 350.3333333333333}, "buy": {"daily": [48, 292, 349, 347, 309, 139, 70], "total": 1554, "avg": 259}, "buy_direct": {"daily": [48, 42, 51, 116, 44, 57, 67], "total": 425, "avg": 70.83333333333333}, "buy_quick": {"daily": [0, 69, 75, 67, 70, 19, 3], "total": 303, "avg": 50.5}, "buy_auto": {"daily": [0, 181, 223, 164, 195, 63, 0], "total": 826, "avg": 137.66666666666666}, "buy_c2c": {"daily": [0, 0, 0, 0, 0, 0, 0], "total": 0, "avg": 0}, "non_buy": {"daily": [55, 56, 62, 77, 84, 91, 123], "total": 548, "avg": 91.33333333333333}, "non_buy_direct": {"daily": [50, 50, 60, 70, 80, 90, 120], "total": 520, "avg": 86.66666666666667}, "non_buy_c2c": {"daily": [5, 6, 2, 7, 4, 1, 3], "total": 28, "avg": 4.666666666666667}, "buy_pct": {"daily": [0.46601941747572817, 0.8390804597701149, 0.8491484184914841, 0.8183962264150944, 0.7862595419847328, 0.6043478260869565, 0.3626943005181347], "total": 0.7392959086584205, "avg": 0.7392959086584205}, "non_buy_pct": {"daily": [0.5339805825242718, 0.16091954022988506, 0.15085158150851583, 0.18160377358490565, 0.21374045801526717, 0.39565217391304347, 0.6373056994818653], "total": 0.26070409134157946, "avg": 0.26070409134157946}, "sell_req_total": {"daily": [306, 441, 406, 348, 359, 294, 270], "total": 2424, "avg": 606}, "sell_buy_total": {"daily": [0, 100, 105, 100, 103, 3, 0], "total": 411, "avg": 102.75}, "sell_req_mycar": {"daily": [6, 6, 11, 17, 11, 13, 9], "total": 73, "avg": 18.25}, "sell_buy_mycar": {"daily": [0, 0, 1, 2, 1, 0, 0], "total": 4, "avg": 1}}];
     let chartInstance = null;
 
-    // Render Weekly Detail Table (Clean Section Headers & Full Sized 4 Rows)
     function changeWeekTable(weekIdx) {
       const w = weeksData[parseInt(weekIdx)];
       const container = document.getElementById('weeklyTableContainer');
@@ -500,7 +483,7 @@
           </thead>
           <tbody class="divide-y divide-slate-100 text-slate-800">
             
-            <!-- (일) 등록 섹션 헤더 -->
+            <!-- (일) 등록 -->
             <tr class="bg-blue-50/70 font-extrabold text-blue-950">
               <td class="py-2.5 px-3 text-left font-extrabold text-blue-900 text-xs md:text-sm">(일) 등록</td>
               ${w.total_reg.daily.map(v => `<td class="py-2 px-2 text-center font-bold">${formatVal(v)}</td>`).join('')}
@@ -508,7 +491,7 @@
               <td class="py-2 px-3 text-center bg-blue-50 font-bold">${formatVal(w.total_reg.avg)}</td>
             </tr>
 
-            <!-- 구매 하위 -->
+            <!-- 구매 -->
             <tr class="bg-slate-50 font-bold text-slate-900">
               <td class="py-2 px-3 text-left pl-5 font-bold">구매</td>
               ${w.buy.daily.map(v => `<td class="py-1.5 px-2 text-center">${formatVal(v)}</td>`).join('')}
@@ -540,7 +523,7 @@
               <td class="text-center">${formatVal(w.buy_c2c.avg)}</td>
             </tr>
 
-            <!-- 비구매 하위 -->
+            <!-- 비구매 -->
             <tr class="bg-slate-50 font-bold text-slate-900 border-t border-slate-200">
               <td class="py-2 px-3 text-left pl-5 font-bold">비구매</td>
               ${w.non_buy.daily.map(v => `<td class="py-1.5 px-2 text-center">${formatVal(v)}</td>`).join('')}
@@ -574,7 +557,7 @@
               <td class="text-center">${formatPct(w.non_buy_pct.avg)}</td>
             </tr>
 
-            <!-- (일) 내차팔기 섹션 헤더 (전체 너비 명확한 헤더 바) -->
+            <!-- (일) 내차팔기 섹션 헤더 -->
             <tr class="border-t-2 border-slate-300 font-extrabold bg-slate-200/70 text-slate-900">
               <td class="py-2.5 px-3 text-left font-extrabold text-slate-900 text-xs md:text-sm" colspan="${w.dates.length + 3}">
                 🚗 (일) 내차팔기 실적
@@ -592,9 +575,9 @@
             <!-- 2. 매입대수 (전체) -->
             <tr class="bg-slate-50 font-semibold text-slate-800 border-b-2 border-slate-200">
               <td class="py-2 px-3 text-left pl-5 font-semibold text-slate-800">매입대수 (전체)</td>
-              ${w.sell_buy_total.daily.map(v => `<td class="py-1.5 px-2 text-center font-medium">${formatVal(v)}</td>`).join('')}
-              <td class="py-1.5 px-3 text-center bg-slate-100 font-bold text-slate-800">${formatVal(w.sell_buy_total.total)}</td>
-              <td class="py-1.5 px-3 text-center bg-slate-50 font-medium">${formatVal(w.sell_buy_total.avg)}</td>
+              ${w.sell_buy_total.daily.map(v => `<td class="text-center font-medium">${formatVal(v)}</td>`).join('')}
+              <td class="text-center bg-slate-100 font-bold text-slate-800">${formatVal(w.sell_buy_total.total)}</td>
+              <td class="text-center font-medium">${formatVal(w.sell_buy_total.avg)}</td>
             </tr>
 
             <!-- 3. 접수건수 (마이카) -->
@@ -620,7 +603,6 @@
       container.innerHTML = tableHtml;
     }
 
-    // Render Chart.js
     function switchChartTab(type) {
       document.querySelectorAll('#chartTabs button').forEach(b => {
         b.className = 'px-3 py-1.5 rounded-lg text-slate-600 hover:bg-white';
@@ -821,7 +803,6 @@
       chartInstance = new Chart(ctx, config);
     }
 
-    // Initial Load
     switchChartTab('total');
     changeWeekTable(weeksData.length - 1);
   </script>
