@@ -248,18 +248,16 @@
             line-height: 1.6;
         }
 
-        /* SECTION TITLES */
+        /* CHARTS SECTION */
         .sec-title {
             font-size: 18px;
-            font-weight: 900;
-            color: var(--text-primary);
-            margin: 36px 0 16px 0;
+            font-weight: 800;
+            margin: 32px 0 16px 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        /* CHART CARDS */
         .chart-box-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -270,32 +268,30 @@
         }
 
         .chart-box-title {
-            font-size: 16.5px;
+            font-size: 15px;
             font-weight: 800;
-            color: var(--text-primary);
             margin-bottom: 18px;
-            text-align: center;
+            color: var(--text-primary);
         }
 
         .chart-wrapper {
             position: relative;
-            height: 320px;
             width: 100%;
+            height: 320px;
         }
 
-        .chart-wrapper.combo-height {
-            height: 360px;
-        }
-
-        /* VERTICAL STACK FOR 3 COMBO CHARTS (FULL WIDTH LAYOUT) */
         .combo-vertical-stack {
             display: flex;
             flex-direction: column;
             gap: 24px;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
-        /* DATA TABLES */
+        .combo-height {
+            height: 290px;
+        }
+
+        /* TABLES SECTION */
         .table-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -307,6 +303,8 @@
 
         .table-card.highlight-card {
             border: 2px solid var(--kcar-red);
+            background: #ffffff;
+            box-shadow: 0 8px 24px -4px rgba(220, 38, 38, 0.1);
         }
 
         .tbl-header {
@@ -319,7 +317,7 @@
         }
 
         .tbl-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
             display: flex;
             align-items: center;
@@ -333,20 +331,21 @@
         table.custom-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 12.5px;
             text-align: right;
         }
 
         table.custom-table th, table.custom-table td {
             padding: 10px 12px;
-            border-bottom: 1px solid var(--border-color);
+            border: 1px solid var(--border-color);
+            white-space: nowrap;
         }
 
-        table.custom-table th {
+        table.custom-table thead th {
             background: #f8fafc;
             color: var(--text-secondary);
             font-weight: 700;
-            text-align: right;
+            text-align: center;
         }
 
         table.custom-table th:first-child, table.custom-table td:first-child {
@@ -450,13 +449,14 @@
             border-radius: 8px;
             display: none;
         }
-        .status-alert.success { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; display: block; }
-        .status-alert.error { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; display: block; }
 
-        footer {
-            margin-top: 40px;
+        .status-alert.success { background: var(--kcar-emerald-tint); color: var(--kcar-emerald); border: 1px solid #a7f3d0; display: block; }
+        .status-alert.error { background: var(--kcar-red-tint); color: var(--kcar-red); border: 1px solid #fecaca; display: block; }
+
+        .footer-cred {
             text-align: center;
-            font-size: 13px;
+            margin-top: 40px;
+            font-size: 12px;
             color: var(--text-muted);
         }
 
@@ -472,15 +472,15 @@
         <header class="dashboard-header">
             <div class="header-title">
                 <h1><span class="badge-logo">K Car</span> 마이카(My Car) 주간 실적 대시보드</h1>
-                <p>2025.04.14 오픈 이래 통합 성과 & 전 주(08.17~08.23) 최근 6주 실적 분석</p>
+                <p>2025.04.14 오픈 이래 통합 성과 & 최신 주차(08.24~08.30) 실적 분석</p>
             </div>
 
             <div class="repo-badge-box">
-                <a href="https://github.com/Datamatketing/mycar-report_test" target="_blank" class="repo-link">
-                    <i class="fa-brands fa-github"></i> Datamatketing/mycar-report_test
+                <a href="https://github.com/DataMarketing1/MyCar_Report" target="_blank" class="repo-link">
+                    <i class="fa-brands fa-github"></i> DataMarketing1/MyCar_Report
                 </a>
                 <div class="live-tag">
-                    <div class="dot-live"></div> Live URL: https://datamatketing.github.io/mycar-report_test/
+                    <div class="dot-live"></div> Live URL: https://datamarketing1.github.io/MyCar_Report/
                 </div>
             </div>
         </header>
@@ -500,7 +500,7 @@
                 </div>
             </div>
 
-            <!-- CARD 2: LATEST WEEK REGISTRATION -->
+            <!-- CARD 2: LATEST WEEK REGISTRATION & GROWTH -->
             <div class="card-stat">
                 <div class="card-header-lbl">
                     <span>최신 주차 등록 실적 (08.24~08.30)</span>
@@ -540,7 +540,6 @@
             </div>
         </div>
 
-        <!-- WEEKLY INSIGHTS PANEL -->
         <!-- INSIGHTS PANEL (EXECUTIVE SUMMARY & ACTION PLANS) -->
         <div class="insights-card">
             <div class="insights-header">
@@ -577,13 +576,13 @@
             </div>
         </div>
 
-        <!-- MONTHLY KPI COMBO CHARTS (STACKED VERTICALLY FULL-WIDTH FOR MAXIMUM READABILITY!) -->
+        <!-- MONTHLY KPI COMBO CHARTS -->
         <div class="sec-title">
             <i class="fa-solid fa-chart-column" style="color: var(--kcar-blue);"></i> 2026년 월별 KPI 대비 실적 및 달성율 (3가지 지표 콤보 차트)
         </div>
 
         <div class="combo-vertical-stack">
-            <!-- COMBO CHART 1: REGISTRATION KPI (FULL WIDTH) -->
+            <!-- COMBO CHART 1: REGISTRATION KPI -->
             <div class="chart-box-card" style="margin-bottom:0;">
                 <div class="chart-box-title">1. 마이카 월별 KPI 달성율 (등록 대수)</div>
                 <div class="chart-wrapper combo-height">
@@ -591,7 +590,7 @@
                 </div>
             </div>
 
-            <!-- COMBO CHART 2: SELL MY CAR APPLICATIONS KPI (FULL WIDTH) -->
+            <!-- COMBO CHART 2: SELL MY CAR APPLICATIONS KPI -->
             <div class="chart-box-card" style="margin-bottom:0;">
                 <div class="chart-box-title">2. 마이카 월별 KPI 달성율 (내차팔기 접수)</div>
                 <div class="chart-wrapper combo-height">
@@ -599,7 +598,7 @@
                 </div>
             </div>
 
-            <!-- COMBO CHART 3: SELL MY CAR PURCHASES KPI (FULL WIDTH) -->
+            <!-- COMBO CHART 3: SELL MY CAR PURCHASES KPI -->
             <div class="chart-box-card" style="margin-bottom:0;">
                 <div class="chart-box-title">3. 마이카 월별 KPI 달성율 (내차팔기 매입)</div>
                 <div class="chart-wrapper combo-height">
@@ -608,12 +607,12 @@
             </div>
         </div>
 
-        <!-- 6 WEEKS DETAILED DATA TABLES (FULL DETAILS FOR ALL 6 WEEKS) -->
+        <!-- 6 WEEKS DETAILED DATA TABLES -->
         <div class="sec-title">
             <i class="fa-solid fa-table-list" style="color: var(--kcar-emerald);"></i> 최근 6주차별 / 일별 상세 실적 데이터 (Week 1 ~ Week 6 전 주차 상세)
         </div>
 
-        <!-- WEEK 6 (TARGET WEEK) -->
+        <!-- WEEK 6 (LATEST TARGET WEEK) -->
         <div class="table-card highlight-card">
             <div class="tbl-header">
                 <div class="tbl-title">
@@ -651,7 +650,7 @@
                             <td>376</td>
                             <td>239</td>
                             <td>317</td>
-                            <td class="sum-col" style="color: var(--kcar-red);">2,612대</td>
+                            <td class="sum-col" style="color: var(--kcar-red); font-weight:900;">2,612대</td>
                             <td class="sum-col">435.3대</td>
                         </tr>
                         <tr>
@@ -803,7 +802,7 @@
                             <td>11</td>
                             <td>13</td>
                             <td>9</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">73건</td>
+                            <td class="sum-col">73건</td>
                             <td class="sum-col">14.6건</td>
                         </tr>
                         <tr style="background: var(--kcar-emerald-tint); font-weight:700;">
@@ -826,102 +825,18 @@
         <!-- WEEK 4 -->
         <div class="table-card">
             <div class="tbl-header">
-                <div class="tbl-title">
-                    <span>Week 4 : 2026.08.03 ~ 2026.08.09</span>
-                </div>
-                <div style="font-size:12.5px; color: var(--text-secondary);">
-                    총 등록: 2,548대 | 일평균: 424.7대 | 내차팔기(마이카) 접수 72건 / 매입 12건
-                </div>
+                <div class="tbl-title"><span>Week 4 : 2026.08.10 ~ 2026.08.16</span></div>
+                <div style="font-size:12.5px; color: var(--text-secondary);">총 등록: 2,212대 | 일평균: 368.7대 | 접수 48건 / 매입 11대</div>
             </div>
             <div class="tbl-responsive">
                 <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>구분 (Metric)</th>
-                            <th>월 (08.03)</th>
-                            <th>화 (08.04)</th>
-                            <th>수 (08.05)</th>
-                            <th>목 (08.06)</th>
-                            <th>금 (08.07)</th>
-                            <th>토 (08.08)</th>
-                            <th>일 (08.09)</th>
-                            <th class="sum-col">주간 합계</th>
-                            <th class="sum-col">일평균</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>구분</th><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th class="sum-col">주간 합계</th><th class="sum-col">일평균</th></tr></thead>
                     <tbody>
-                        <tr class="total-row">
-                            <td>(일) 총 등록대수</td>
-                            <td>393</td>
-                            <td>398</td>
-                            <td>329</td>
-                            <td>420</td>
-                            <td>391</td>
-                            <td>248</td>
-                            <td>369</td>
-                            <td class="sum-col">2,548대</td>
-                            <td class="sum-col">424.7대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 🛍️ 구매 고객 등록</td>
-                            <td>251</td>
-                            <td>269</td>
-                            <td>216</td>
-                            <td>296</td>
-                            <td>260</td>
-                            <td>104</td>
-                            <td>102</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">1,498대 (58.8%)</td>
-                            <td class="sum-col">249.7대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 👤 비구매 고객 등록</td>
-                            <td>142</td>
-                            <td>129</td>
-                            <td>113</td>
-                            <td>124</td>
-                            <td>131</td>
-                            <td>144</td>
-                            <td>267</td>
-                            <td class="sum-col">1,050대 (41.2%)</td>
-                            <td class="sum-col">175.0대</td>
-                        </tr>
-                        <tr style="background: #f8fafc;">
-                            <td><strong>(일) 내차팔기 접수 (전체)</strong></td>
-                            <td>384</td>
-                            <td>379</td>
-                            <td>366</td>
-                            <td>391</td>
-                            <td>382</td>
-                            <td>288</td>
-                            <td>302</td>
-                            <td class="sum-col">2,492건</td>
-                            <td class="sum-col">498.4건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-blue-tint); font-weight:700;">
-                            <td style="color: var(--kcar-blue);">  └ 🚗 내차팔기 접수 (마이카)</td>
-                            <td>14</td>
-                            <td>16</td>
-                            <td>7</td>
-                            <td>6</td>
-                            <td>10</td>
-                            <td>6</td>
-                            <td>13</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">72건</td>
-                            <td class="sum-col">14.4건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-emerald-tint); font-weight:700;">
-                            <td style="color: var(--kcar-emerald);">  └ 🤝 내차팔기 매입 (마이카)</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td class="sum-col" style="color: var(--kcar-emerald);">12건</td>
-                            <td class="sum-col">2.4건</td>
-                        </tr>
+                        <tr class="total-row"><td>(일) 총 등록대수</td><td>383</td><td>398</td><td>412</td><td>387</td><td>311</td><td>167</td><td>154</td><td class="sum-col">2,212대</td><td class="sum-col">368.7대</td></tr>
+                        <tr><td>구매 고객 등록</td><td>277</td><td>267</td><td>304</td><td>273</td><td>226</td><td>49</td><td>43</td><td class="sum-col">1,439대</td><td class="sum-col">239.8대</td></tr>
+                        <tr><td>비구매 고객 등록</td><td>106</td><td>131</td><td>108</td><td>114</td><td>85</td><td>118</td><td>111</td><td class="sum-col">773대</td><td class="sum-col">128.8대</td></tr>
+                        <tr><td>내차팔기 접수 (마이카)</td><td>6</td><td>10</td><td>5</td><td>7</td><td>4</td><td>9</td><td>7</td><td class="sum-col">48건</td><td class="sum-col">9.6건</td></tr>
+                        <tr><td>내차팔기 매입 (마이카)</td><td>2</td><td>2</td><td>1</td><td>5</td><td>1</td><td>0</td><td>0</td><td class="sum-col">11대</td><td class="sum-col">2.2대</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -930,102 +845,18 @@
         <!-- WEEK 3 -->
         <div class="table-card">
             <div class="tbl-header">
-                <div class="tbl-title">
-                    <span>Week 3 : 2026.07.27 ~ 2026.08.02</span>
-                </div>
-                <div style="font-size:12.5px; color: var(--text-secondary);">
-                    총 등록: 2,707대 | 일평균: 451.2대 | 내차팔기(마이카) 접수 68건 / 매입 11건
-                </div>
+                <div class="tbl-title"><span>Week 3 : 2026.08.03 ~ 2026.08.09</span></div>
+                <div style="font-size:12.5px; color: var(--text-secondary);">총 등록: 2,548대 | 일평균: 424.7대 | 접수 49건 / 매입 12대</div>
             </div>
             <div class="tbl-responsive">
                 <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>구분 (Metric)</th>
-                            <th>월 (07.27)</th>
-                            <th>화 (07.28)</th>
-                            <th>수 (07.29)</th>
-                            <th>목 (07.30)</th>
-                            <th>금 (07.31)</th>
-                            <th>토 (08.01)</th>
-                            <th>일 (08.02)</th>
-                            <th class="sum-col">주간 합계</th>
-                            <th class="sum-col">일평균</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>구분</th><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th class="sum-col">주간 합계</th><th class="sum-col">일평균</th></tr></thead>
                     <tbody>
-                        <tr class="total-row">
-                            <td>(일) 총 등록대수</td>
-                            <td>500</td>
-                            <td>490</td>
-                            <td>406</td>
-                            <td>432</td>
-                            <td>465</td>
-                            <td>236</td>
-                            <td>178</td>
-                            <td class="sum-col">2,707대</td>
-                            <td class="sum-col">451.2대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 🛍️ 구매 고객 등록</td>
-                            <td>363</td>
-                            <td>325</td>
-                            <td>267</td>
-                            <td>276</td>
-                            <td>343</td>
-                            <td>121</td>
-                            <td>49</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">1,744대 (64.4%)</td>
-                            <td class="sum-col">290.7대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 👤 비구매 고객 등록</td>
-                            <td>137</td>
-                            <td>165</td>
-                            <td>139</td>
-                            <td>156</td>
-                            <td>122</td>
-                            <td>115</td>
-                            <td>129</td>
-                            <td class="sum-col">963대 (35.6%)</td>
-                            <td class="sum-col">160.5대</td>
-                        </tr>
-                        <tr style="background: #f8fafc;">
-                            <td><strong>(일) 내차팔기 접수 (전체)</strong></td>
-                            <td>412</td>
-                            <td>423</td>
-                            <td>380</td>
-                            <td>395</td>
-                            <td>402</td>
-                            <td>268</td>
-                            <td>230</td>
-                            <td class="sum-col">2,510건</td>
-                            <td class="sum-col">502.0건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-blue-tint); font-weight:700;">
-                            <td style="color: var(--kcar-blue);">  └ 🚗 내차팔기 접수 (마이카)</td>
-                            <td>11</td>
-                            <td>9</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                            <td>5</td>
-                            <td>4</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">68건</td>
-                            <td class="sum-col">13.6건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-emerald-tint); font-weight:700;">
-                            <td style="color: var(--kcar-emerald);">  └ 🤝 내차팔기 매입 (마이카)</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>3</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td class="sum-col" style="color: var(--kcar-emerald);">11건</td>
-                            <td class="sum-col">2.2건</td>
-                        </tr>
+                        <tr class="total-row"><td>(일) 총 등록대수</td><td>393</td><td>398</td><td>329</td><td>420</td><td>391</td><td>248</td><td>369</td><td class="sum-col">2,548대</td><td class="sum-col">424.7대</td></tr>
+                        <tr><td>구매 고객 등록</td><td>251</td><td>269</td><td>216</td><td>296</td><td>260</td><td>104</td><td>102</td><td class="sum-col">1,498대</td><td class="sum-col">249.7대</td></tr>
+                        <tr><td>비구매 고객 등록</td><td>142</td><td>129</td><td>113</td><td>124</td><td>131</td><td>144</td><td>267</td><td class="sum-col">1,050대</td><td class="sum-col">175.0대</td></tr>
+                        <tr><td>내차팔기 접수 (마이카)</td><td>11</td><td>6</td><td>4</td><td>7</td><td>6</td><td>8</td><td>7</td><td class="sum-col">49건</td><td class="sum-col">9.8건</td></tr>
+                        <tr><td>내차팔기 매입 (마이카)</td><td>5</td><td>4</td><td>2</td><td>0</td><td>1</td><td>0</td><td>0</td><td class="sum-col">12대</td><td class="sum-col">2.4대</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1034,102 +865,18 @@
         <!-- WEEK 2 -->
         <div class="table-card">
             <div class="tbl-header">
-                <div class="tbl-title">
-                    <span>Week 2 : 2026.07.20 ~ 2026.07.26</span>
-                </div>
-                <div style="font-size:12.5px; color: var(--text-secondary);">
-                    총 등록: 2,686대 | 일평균: 447.7대 | 내차팔기(마이카) 접수 56건 / 매입 9건
-                </div>
+                <div class="tbl-title"><span>Week 2 : 2026.07.27 ~ 2026.08.02</span></div>
+                <div style="font-size:12.5px; color: var(--text-secondary);">총 등록: 2,707대 | 일평균: 451.2대 | 접수 71건 / 매입 12대</div>
             </div>
             <div class="tbl-responsive">
                 <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>구분 (Metric)</th>
-                            <th>월 (07.20)</th>
-                            <th>화 (07.21)</th>
-                            <th>수 (07.22)</th>
-                            <th>목 (07.23)</th>
-                            <th>금 (07.24)</th>
-                            <th>토 (07.25)</th>
-                            <th>일 (07.26)</th>
-                            <th class="sum-col">주간 합계</th>
-                            <th class="sum-col">일평균</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>구분</th><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th class="sum-col">주간 합계</th><th class="sum-col">일평균</th></tr></thead>
                     <tbody>
-                        <tr class="total-row">
-                            <td>(일) 총 등록대수</td>
-                            <td>541</td>
-                            <td>376</td>
-                            <td>418</td>
-                            <td>386</td>
-                            <td>384</td>
-                            <td>294</td>
-                            <td>287</td>
-                            <td class="sum-col">2,686대</td>
-                            <td class="sum-col">447.7대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 🛍️ 구매 고객 등록</td>
-                            <td>372</td>
-                            <td>211</td>
-                            <td>268</td>
-                            <td>235</td>
-                            <td>232</td>
-                            <td>123</td>
-                            <td>62</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">1,503대 (56.0%)</td>
-                            <td class="sum-col">250.5대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 👤 비구매 고객 등록</td>
-                            <td>169</td>
-                            <td>165</td>
-                            <td>150</td>
-                            <td>151</td>
-                            <td>152</td>
-                            <td>171</td>
-                            <td>225</td>
-                            <td class="sum-col">1,183대 (44.0%)</td>
-                            <td class="sum-col">197.2대</td>
-                        </tr>
-                        <tr style="background: #f8fafc;">
-                            <td><strong>(일) 내차팔기 접수 (전체)</strong></td>
-                            <td>430</td>
-                            <td>370</td>
-                            <td>390</td>
-                            <td>365</td>
-                            <td>375</td>
-                            <td>280</td>
-                            <td>250</td>
-                            <td class="sum-col">2,460건</td>
-                            <td class="sum-col">492.0건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-blue-tint); font-weight:700;">
-                            <td style="color: var(--kcar-blue);">  └ 🚗 내차팔기 접수 (마이카)</td>
-                            <td>9</td>
-                            <td>7</td>
-                            <td>9</td>
-                            <td>8</td>
-                            <td>11</td>
-                            <td>7</td>
-                            <td>5</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">56건</td>
-                            <td class="sum-col">11.2건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-emerald-tint); font-weight:700;">
-                            <td style="color: var(--kcar-emerald);">  └ 🤝 내차팔기 매입 (마이카)</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td class="sum-col" style="color: var(--kcar-emerald);">9건</td>
-                            <td class="sum-col">1.8건</td>
-                        </tr>
+                        <tr class="total-row"><td>(일) 총 등록대수</td><td>500</td><td>490</td><td>406</td><td>432</td><td>465</td><td>236</td><td>178</td><td class="sum-col">2,707대</td><td class="sum-col">451.2대</td></tr>
+                        <tr><td>구매 고객 등록</td><td>363</td><td>325</td><td>267</td><td>276</td><td>343</td><td>121</td><td>49</td><td class="sum-col">1,744대</td><td class="sum-col">290.7대</td></tr>
+                        <tr><td>비구매 고객 등록</td><td>137</td><td>165</td><td>139</td><td>156</td><td>122</td><td>115</td><td>129</td><td class="sum-col">963대</td><td class="sum-col">160.5대</td></tr>
+                        <tr><td>내차팔기 접수 (마이카)</td><td>12</td><td>21</td><td>15</td><td>6</td><td>7</td><td>4</td><td>6</td><td class="sum-col">71건</td><td class="sum-col">14.2건</td></tr>
+                        <tr><td>내차팔기 매입 (마이카)</td><td>2</td><td>4</td><td>1</td><td>4</td><td>1</td><td>0</td><td>0</td><td class="sum-col">12대</td><td class="sum-col">2.4대</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1138,102 +885,18 @@
         <!-- WEEK 1 -->
         <div class="table-card">
             <div class="tbl-header">
-                <div class="tbl-title">
-                    <span>Week 1 : 2026.07.13 ~ 2026.07.19</span>
-                </div>
-                <div style="font-size:12.5px; color: var(--text-secondary);">
-                    총 등록: 2,269대 | 일평균: 378.2대 | 내차팔기(마이카) 접수 48건 / 매입 8건
-                </div>
+                <div class="tbl-title"><span>Week 1 : 2026.07.20 ~ 2026.07.26</span></div>
+                <div style="font-size:12.5px; color: var(--text-secondary);">총 등록: 2,686대 | 일평균: 447.7대 | 접수 108건 / 매입 9대</div>
             </div>
             <div class="tbl-responsive">
                 <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>구분 (Metric)</th>
-                            <th>월 (07.13)</th>
-                            <th>화 (07.14)</th>
-                            <th>수 (07.15)</th>
-                            <th>목 (07.16)</th>
-                            <th>금 (07.17)</th>
-                            <th>토 (07.18)</th>
-                            <th>일 (07.19)</th>
-                            <th class="sum-col">주간 합계</th>
-                            <th class="sum-col">일평균</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th>구분</th><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th><th class="sum-col">주간 합계</th><th class="sum-col">일평균</th></tr></thead>
                     <tbody>
-                        <tr class="total-row">
-                            <td>(일) 총 등록대수</td>
-                            <td>423</td>
-                            <td>351</td>
-                            <td>351</td>
-                            <td>387</td>
-                            <td>200</td>
-                            <td>301</td>
-                            <td>256</td>
-                            <td class="sum-col">2,269대</td>
-                            <td class="sum-col">378.2대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 🛍️ 구매 고객 등록</td>
-                            <td>249</td>
-                            <td>210</td>
-                            <td>212</td>
-                            <td>257</td>
-                            <td>44</td>
-                            <td>154</td>
-                            <td>64</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">1,190대 (52.4%)</td>
-                            <td class="sum-col">198.3대</td>
-                        </tr>
-                        <tr>
-                            <td>  └ 👤 비구매 고객 등록</td>
-                            <td>174</td>
-                            <td>141</td>
-                            <td>139</td>
-                            <td>130</td>
-                            <td>156</td>
-                            <td>147</td>
-                            <td>192</td>
-                            <td class="sum-col">1,079대 (47.6%)</td>
-                            <td class="sum-col">179.8대</td>
-                        </tr>
-                        <tr style="background: #f8fafc;">
-                            <td><strong>(일) 내차팔기 접수 (전체)</strong></td>
-                            <td>380</td>
-                            <td>340</td>
-                            <td>350</td>
-                            <td>370</td>
-                            <td>280</td>
-                            <td>290</td>
-                            <td>270</td>
-                            <td class="sum-col">2,280건</td>
-                            <td class="sum-col">456.0건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-blue-tint); font-weight:700;">
-                            <td style="color: var(--kcar-blue);">  └ 🚗 내차팔기 접수 (마이카)</td>
-                            <td>7</td>
-                            <td>6</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>5</td>
-                            <td class="sum-col" style="color: var(--kcar-blue);">48건</td>
-                            <td class="sum-col">9.6건</td>
-                        </tr>
-                        <tr style="background: var(--kcar-emerald-tint); font-weight:700;">
-                            <td style="color: var(--kcar-emerald);">  └ 🤝 내차팔기 매입 (마이카)</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td class="sum-col" style="color: var(--kcar-emerald);">8건</td>
-                            <td class="sum-col">1.6건</td>
-                        </tr>
+                        <tr class="total-row"><td>(일) 총 등록대수</td><td>541</td><td>376</td><td>418</td><td>386</td><td>384</td><td>294</td><td>287</td><td class="sum-col">2,686대</td><td class="sum-col">447.7대</td></tr>
+                        <tr><td>구매 고객 등록</td><td>372</td><td>211</td><td>268</td><td>235</td><td>232</td><td>123</td><td>62</td><td class="sum-col">1,503대</td><td class="sum-col">250.5대</td></tr>
+                        <tr><td>비구매 고객 등록</td><td>169</td><td>165</td><td>150</td><td>151</td><td>152</td><td>171</td><td>225</td><td class="sum-col">1,183대</td><td class="sum-col">197.2대</td></tr>
+                        <tr><td>내차팔기 접수 (마이카)</td><td>30</td><td>24</td><td>8</td><td>15</td><td>15</td><td>6</td><td>10</td><td class="sum-col">108건</td><td class="sum-col">21.6건</td></tr>
+                        <tr><td>내차팔기 매입 (마이카)</td><td>2</td><td>0</td><td>1</td><td>4</td><td>2</td><td>0</td><td>0</td><td class="sum-col">9대</td><td class="sum-col">1.8대</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1243,13 +906,13 @@
         <div class="sync-card" id="githubSyncPanel">
             <h3><i class="fa-brands fa-github" style="color: var(--kcar-blue);"></i> GitHub 자동 연동 & 원클릭 업데이트 컨트롤 센터</h3>
             <p style="color: var(--text-secondary); font-size:12.5px; margin-bottom:14px;">
-                연동 대상 리포지토리: <strong>https://github.com/Datamatketing/mycar-report_test.git</strong> | Live URL: <strong>https://datamatketing.github.io/mycar-report_test/</strong>
+                연동 대상 리포지토리: <strong>https://github.com/DataMarketing1/MyCar_Report.git</strong> | Live URL: <strong>https://datamarketing1.github.io/MyCar_Report/</strong>
             </p>
 
             <div class="sync-form-grid">
                 <div class="form-field">
                     <label for="ghRepoUrl">GitHub Repository URL</label>
-                    <input type="text" id="ghRepoUrl" value="https://github.com/Datamatketing/mycar-report_test.git">
+                    <input type="text" id="ghRepoUrl" value="https://github.com/DataMarketing1/MyCar_Report.git">
                 </div>
                 <div class="form-field">
                     <label for="ghBranch">Branch</label>
@@ -1265,7 +928,7 @@
                 <button type="button" class="btn-act primary" id="updateGithubApiBtn">
                     <i class="fa-solid fa-cloud-arrow-up"></i> GitHub API로 index.html 즉시 업데이트
                 </button>
-                <a href="https://github.com/Datamatketing/mycar-report_test/upload/main" target="_blank" class="btn-act blue" style="text-decoration:none;">
+                <a href="https://github.com/DataMarketing1/MyCar_Report/upload/main" target="_blank" class="btn-act blue" style="text-decoration:none;">
                     <i class="fa-solid fa-arrow-up-from-bracket"></i> 깃허브 웹 1-Click 파일 업로드
                 </a>
                 <button type="button" class="btn-act outline" id="copyGitCmdBtn">
@@ -1282,7 +945,7 @@
         <!-- FOOTER -->
         <footer>
             <p>© K Car Inc. & Antigravity IDE | 마이카(My Car) 주간 실적 대시보드</p>
-            <p style="margin-top:4px;">Connected Repo: <a href="https://github.com/Datamatketing/mycar-report_test" target="_blank" style="color: var(--kcar-blue);">Datamatketing/mycar-report_test</a></p>
+            <p style="margin-top:4px;">Connected Repo: <a href="https://github.com/DataMarketing1/MyCar_Report" target="_blank" style="color: var(--kcar-blue);">DataMarketing1/MyCar_Report</a></p>
         </footer>
     </div>
 
@@ -1627,14 +1290,14 @@
                 }
             });
 
-            // Load saved PAT token
+            // LocalStorage PAT load
             const savedToken = localStorage.getItem('gh_pat_token');
             if (savedToken) {
                 document.getElementById('ghToken').value = savedToken;
             }
         });
 
-        // GITHUB API DIRECT UPDATE
+        // GitHub Direct Update
         document.getElementById('updateGithubApiBtn').addEventListener('click', async () => {
             const token = document.getElementById('ghToken').value.trim();
             const statusMsg = document.getElementById('statusMsg');
@@ -1649,10 +1312,10 @@
             statusMsg.className = 'status-alert';
             statusMsg.style.display = 'block';
             statusMsg.style.color = '#2563eb';
-            statusMsg.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> GitHub(Datamatketing/mycar-report_test)에 index.html을 업로드하는 중...';
+            statusMsg.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> GitHub(DataMarketing1/MyCar_Report)에 index.html을 업로드하는 중...';
 
-            const owner = 'Datamatketing';
-            const repo = 'mycar-report_test';
+            const owner = 'DataMarketing1';
+            const repo = 'MyCar_Report';
             const path = 'index.html';
             const branch = document.getElementById('ghBranch').value.trim() || 'main';
 
@@ -1671,7 +1334,8 @@
                     sha = data.sha;
                 }
 
-                const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                const htmlContent = '<!DOCTYPE html>
+' + document.documentElement.outerHTML;
                 const encoder = new TextEncoder();
                 const dataBytes = encoder.encode(htmlContent);
                 let binaryStr = '';
@@ -1700,11 +1364,11 @@
 
                 if (putRes.ok) {
                     statusMsg.className = 'status-alert success';
-                    statusMsg.innerHTML = '<i class="fa-solid fa-circle-check"></i> 성공! index.html이 GitHub(Datamatketing/mycar-report_test)에 성공적으로 업데이트되었습니다! 라이브 URL(https://datamatketing.github.io/mycar-report_test/)에 수초 내 반영됩니다.';
+                    statusMsg.innerHTML = '<i class="fa-solid fa-circle-check"></i> 성공! index.html이 GitHub(DataMarketing1/MyCar_Report)에 성공적으로 업데이트되었습니다! 라이브 URL(https://datamarketing1.github.io/MyCar_Report/)에 수초 내 반영됩니다.';
                 } else {
                     const errData = await putRes.json();
                     statusMsg.className = 'status-alert error';
-                    statusMsg.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> 업로드 실패: ${errData.message || '토큰 권한(repo scope)을 확인하세요.'}`;
+                    statusMsg.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> 업로드 실패: ${errData.message || '토큰 권한을 확인하세요.'}`;
                 }
             } catch (err) {
                 statusMsg.className = 'status-alert error';
@@ -1714,14 +1378,19 @@
 
         // Copy CLI Commands
         document.getElementById('copyGitCmdBtn').addEventListener('click', () => {
-            const cmds = `git add index.html generate_mycar_weekly_report.py\ngit commit -m "Update Vertical Full Width Charts My Car Report index.html"\ngit push origin main`;
+            const cmds = `git add index.html
+git commit -m "Update My Car Weekly Report"
+git push origin main`;
             navigator.clipboard.writeText(cmds);
-            alert('Git CLI 명령어 클립보드 복사 완료!\n\n' + cmds);
+            alert('Git CLI 명령어 클립보드 복사 완료!
+
+' + cmds);
         });
 
         // Download HTML
         document.getElementById('downloadHtmlBtn').addEventListener('click', () => {
-            const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const htmlContent = '<!DOCTYPE html>
+' + document.documentElement.outerHTML;
             const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
