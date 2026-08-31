@@ -1334,8 +1334,7 @@
                     sha = data.sha;
                 }
 
-                const htmlContent = '<!DOCTYPE html>
-' + document.documentElement.outerHTML;
+                const htmlContent = `<!DOCTYPE html>\n${document.documentElement.outerHTML}`;
                 const encoder = new TextEncoder();
                 const dataBytes = encoder.encode(htmlContent);
                 let binaryStr = '';
@@ -1378,19 +1377,14 @@
 
         // Copy CLI Commands
         document.getElementById('copyGitCmdBtn').addEventListener('click', () => {
-            const cmds = `git add index.html
-git commit -m "Update My Car Weekly Report"
-git push origin main`;
+            const cmds = `git add index.html\ngit commit -m "Update My Car Weekly Report"\ngit push origin main`;
             navigator.clipboard.writeText(cmds);
-            alert('Git CLI 명령어 클립보드 복사 완료!
-
-' + cmds);
+            alert('Git CLI 명령어 클립보드 복사 완료!\n\n' + cmds);
         });
 
         // Download HTML
         document.getElementById('downloadHtmlBtn').addEventListener('click', () => {
-            const htmlContent = '<!DOCTYPE html>
-' + document.documentElement.outerHTML;
+            const htmlContent = `<!DOCTYPE html>\n${document.documentElement.outerHTML}`;
             const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
